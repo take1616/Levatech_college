@@ -6,7 +6,7 @@
         <title>Posts</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-    </head>
+    </head class="antialiased">
     <body>
         <h1 class="title">
             {{ $post->title }}
