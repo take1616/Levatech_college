@@ -11,6 +11,7 @@
         
     </head>
     <body class="antialiased">
+        <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
         <h1>Blog Name</h1>
         <div class="posts">
             @foreach ($posts as $post)
