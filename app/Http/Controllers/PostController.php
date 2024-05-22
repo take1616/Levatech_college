@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Category;
 
 class PostController extends Controller
 {
     public function index(Post $post)
     {
-        return view('posts.index')->with(['posts' => $post->getPaginateByLimit()]);
+        return view('posts.index')->with(['post' => $post->getPaginateByLimit()]);
     }
     
     public function show(Post $post)
@@ -18,9 +19,14 @@ class PostController extends Controller
      //'post'はbladeファイルで使う変数。中身は$postはid=1のPostインスタンス。
     }
     
-        public function edit(Post $post)
+    public function edit(Post $post)
     {
         return view('posts.edit')->with(['post' => $post]);
+    }
+    
+    public function create(Category $category)
+    {
+        return view('posts.create')->with(['categories' => $category->get()]);
     }
     
     public function update(PostRequest $request, Post $post)
